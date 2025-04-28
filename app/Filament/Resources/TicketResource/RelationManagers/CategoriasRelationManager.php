@@ -40,11 +40,13 @@ class CategoriasRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
+
                 AttachAction::make()
                 ->recordSelectOptionsQuery(function (Builder $query) {
                     return $query->active();
                 })
                 ->preloadRecordSelect(),
+
             ])
             ->actions([
                 DetachAction::make()
