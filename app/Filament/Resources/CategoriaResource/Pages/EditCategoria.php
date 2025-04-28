@@ -17,6 +17,7 @@ class EditCategoria extends EditRecord
         ];
     }
 
+
     protected function getSavedNotificationTitle(): ?string
     {
         return 'Categoria guardada con éxito';
