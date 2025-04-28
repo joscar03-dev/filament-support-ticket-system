@@ -16,7 +16,8 @@ class MetricWidget extends Widget
 {
     protected static string $view = 'filament.custom-widgets.metric-widget';
 
-    use Macroable;
+
+
 
     // /**
     //  * @var array<float> | null
@@ -68,6 +69,11 @@ class MetricWidget extends Widget
         $this->label($label);
         $this->value($value);
     }
+    protected function getFilters(): ?array
+    {
+        return null;
+    }
+
 
     /**
      * @param  scalar | Htmlable | Closure  $value
@@ -219,16 +225,6 @@ class MetricWidget extends Widget
         return new ComponentAttributeBag($this->getExtraAttributes());
     }
 
-    public function getUrl(): ?string
-    {
-        return $this->url;
-    }
-
-    public function shouldOpenUrlInNewTab(): bool
-    {
-        return $this->shouldOpenUrlInNewTab;
-    }
-
     public function getLabel(): string | Htmlable
     {
         return $this->label;
@@ -251,12 +247,6 @@ class MetricWidget extends Widget
     {
         return $this->render()->render();
     }
-
-    public function render(): View
-    {
-        return view('filament-widgets::stats-overview-widget.stat', $this->data());
-    }
-
     public function generateDataChecksum(): string
     {
         return md5(json_encode($this->getChart()) . now());

@@ -23,6 +23,7 @@ class CategoriaResource extends Resource
 {
     protected static ?string $model = Categoria::class;
 
+
     protected static ?string $navigationIcon = 'heroicon-o-funnel';
 
     public static function form(Form $form): Form

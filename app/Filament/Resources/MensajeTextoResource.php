@@ -19,6 +19,7 @@ class MensajeTextoResource extends Resource
 {
     protected static ?string $model = MensajeTexto::class;
 
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
