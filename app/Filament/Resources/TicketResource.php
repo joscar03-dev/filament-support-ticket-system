@@ -112,6 +112,7 @@ class TicketResource extends Resource
 
             ])
             ->filters([
+
                 SelectFilter::make('estado')
                     ->options(self::$model::ESTADOS)
                     ->label('Estado')
@@ -120,6 +121,7 @@ class TicketResource extends Resource
                     ->options(self::$model::PRIORIDAD)
                     ->label('Prioridad')
                     ->placeholder('Filtro por prioridad'),
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
