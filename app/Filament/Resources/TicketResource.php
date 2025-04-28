@@ -107,6 +107,7 @@ class TicketResource extends Resource
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->label('Creado en')
+                    ->sortable()
 
 
 
