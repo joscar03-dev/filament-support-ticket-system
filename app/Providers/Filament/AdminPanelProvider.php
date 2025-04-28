@@ -28,7 +28,9 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+
             ->sidebarCollapsibleOnDesktop(true)
+
             ->login()
             ->databaseNotifications(true)
             ->colors([
