@@ -47,7 +47,7 @@ class UserResource extends Resource
                     ->password()
                     ->label('Contraseña')
                     ->required()
-                    ->hiddenOn(['edit']),
+                    ->hiddenOn(['edit']), //ocultar en el edit
 
             ]);
     }
