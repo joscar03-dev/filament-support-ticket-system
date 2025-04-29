@@ -86,7 +86,6 @@ class TicketResource extends Resource
                     ->sortable(),
                 SelectColumn::make('estado')
                     ->options(self::$model::ESTADOS)
-
                     ->label('Estado'),
                 TextColumn::make('prioridad')
                     ->badge()
