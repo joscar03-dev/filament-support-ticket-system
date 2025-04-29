@@ -90,7 +90,7 @@ class TicketResource extends Resource
                     ->label('Estado'),
                 TextColumn::make('prioridad')
                     ->badge()
-                    ->colors([
+                    ->colors ([
                         'warning' => self::$model::PRIORIDAD['Alta'],
                         'info' => self::$model::PRIORIDAD['Media'],
                         'danger' => self::$model::PRIORIDAD['Baja'],
