@@ -18,6 +18,7 @@ class EditUser extends EditRecord
     {
         return [
             // Actions\DeleteAction::make(),
+
             Action::make('actualizarContraseña')
                 ->form([
                     TextInput::make('password')
