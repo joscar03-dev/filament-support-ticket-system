@@ -71,9 +71,11 @@ class TicketResource extends Resource
     {
         return $table
             ->modifyQueryUsing(
+
                 fn(Builder $query) =>
                 auth()->user()->hasRol(Rol::ROLS['Administrador']) ?
                     $query : $query->where('asignado_a', auth()->id())
+
             )
             ->defaultSort('created_at', 'desc')
             ->columns([

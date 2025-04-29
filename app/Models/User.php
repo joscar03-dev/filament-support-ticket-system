@@ -48,6 +48,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Rol::class);
     }
 
+
     public function hasPermiso(string $permiso) : bool {
         $permisosArray = [];
 
