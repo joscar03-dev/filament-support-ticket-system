@@ -16,6 +16,7 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
+
             Stat::make('Total de tickets', Ticket::count()),
             Stat::make('Total de categorias', Categoria::where('is_active', true)->count()),
             Stat::make('Total de moderadores', User::whereHas('rols', function (Builder $query){

@@ -16,6 +16,7 @@ class UltimosTickets extends BaseWidget
     public function table(Table $table): Table
     {
         return $table
+
             ->query(
                 auth()->user()->hasRol(Rol::ROLS['Administrador'])
                     ? Ticket::query()
