@@ -22,7 +22,7 @@ class ListTickets extends ListRecords
     protected function getHeaderWidgets(): array
     {
         return [
-            StatsOverview::class,
+            StatsOverview::class, //agregar widgets de encabezado
         ];
     }
 }
