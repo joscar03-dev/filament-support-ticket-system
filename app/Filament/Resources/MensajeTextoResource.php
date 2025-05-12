@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class MensajeTextoResource extends Resource
 {
+    //recursos para el envio de mensajes de texto
     protected static ?string $model = MensajeTexto::class;
 
 
