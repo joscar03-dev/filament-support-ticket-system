@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MensajeTexto extends Model
 {
+    //modelo para el envio de mensajes de texto
     use HasFactory;
 
     protected $fillable = [

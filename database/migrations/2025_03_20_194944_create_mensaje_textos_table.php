@@ -12,6 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //creacion de la tabla mensaje_textos
         Schema::create('mensaje_textos', function (Blueprint $table) {
             $table->id();
             $table->text('mensaje');
