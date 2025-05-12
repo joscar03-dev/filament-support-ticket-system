@@ -79,6 +79,7 @@ class UserResource extends Resource
                 DeleteAction::make(),
             ])
             ->bulkActions([
+                //creacion de la accion bulk para enviar mensajes
                 Tables\Actions\BulkActionGroup::make([
                     BulkAction::make('enviarSms')
                         ->modalButton('Enviar SMS')
@@ -92,6 +93,7 @@ class UserResource extends Resource
                             Textarea::make('comentarios')
                         ])
                         ->action(function (array $data, Collection $collection) {
+                            //creacion de servicio para enviar mensajes
                             ServicioMensajeTexto::enviarMensaje($data, $collection);
                             Notification::make()
                                 ->title('Mensaje enviado')

@@ -6,7 +6,14 @@ use App\Models\MensajeTexto;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
+
+/**
+ * Servicio para el envio de mensajes de texto
+ * @package App\Services
+ */
 class ServicioMensajeTexto {
+
+    //funcion para enviar mensaje
     public static function enviarMensaje(array $data, Collection $records)
     {
         $mensajesTexto = Collect([]);
@@ -20,6 +27,7 @@ class ServicioMensajeTexto {
 
     }
 
+    //funcion para enviar mensjae de texto
     public static function enviarMensajeTexto(User $record, array $data): array
     {
         $mensaje = Str::replace('{name}', $record->name, $data['mensaje']);
