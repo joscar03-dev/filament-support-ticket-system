@@ -16,9 +16,9 @@ class TicketsOverviewChart extends ChartWidget
     protected function getFilters(): ?array
     {
         return [
-            'week' => 'Last week',
-            'month' => 'Last month',
-            'year' => 'This year',
+            'week' => 'Hace 7 días', //last week
+            'month' => 'Hace 1 mes', //last month
+            'year' => 'Este año',   //this year
         ];
     }
 
