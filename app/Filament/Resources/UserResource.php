@@ -63,13 +63,13 @@ class UserResource extends Resource
                 Tables\Columns\TextColumn::make('email')
                     ->label('Email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('rols.nombre')
+                Tables\Columns\TextColumn::make('rols.nombre') //mostrar rol
                     ->label('Roles')
                     ->badge()
                     ->searchable()
             ])
             ->filters([
-                SelectFilter::make('rol')
+                SelectFilter::make('rol') //filtro por rol
                     ->relationship('rols', 'nombre')
                     ->label('Rol')
                     ->preload(),
