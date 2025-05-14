@@ -27,6 +27,7 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Register the TicketObserver for the Ticket model
         Ticket::observe(TicketObserver::class);
     }
 

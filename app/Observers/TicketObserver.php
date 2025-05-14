@@ -13,6 +13,7 @@ class TicketObserver
      */
     public function created(Ticket $ticket): void
     {
+        // Enviar notificación al agente asignado
         $agent = $ticket->asignadoA()->first();
 
         Notification::make()

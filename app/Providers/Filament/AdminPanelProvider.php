@@ -32,7 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop(true)
 
             ->login()
-            ->databaseNotifications(true)
+            ->databaseNotifications(true) //actiar notificaciones de base de datos
             ->colors([
                 'danger' => Color::Rose,
                 'gray' => Color::Gray,
