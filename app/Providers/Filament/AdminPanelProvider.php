@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\CustomWidgets\MetricsOverviewWidget;
 use App\Filament\CustomWidgets\MetricWidget;
 use App\Filament\Widgets\TicketsOverviewChart;
 use Filament\Facades\Filament;
@@ -50,7 +51,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                MetricWidget::class,
                 /* Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class, */
 
