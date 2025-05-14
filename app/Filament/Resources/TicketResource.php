@@ -50,8 +50,9 @@ class TicketResource extends Resource
                     ->in(array_keys(self::$model::ESTADOS)),
                 FileUpload::make('attachment')
                     ->label('Archivo')
-                    ->multiple()
                     ->preserveFilenames()
+                    ->downloadable()
+                    ->uploadingMessage('Subiendo archivo...')
                     ->directory('tickets')
                     ->acceptedFileTypes(['application/pdf', 'image/*'])
                     ->maxSize(1024),
