@@ -40,11 +40,10 @@ class CategoriaResource extends Resource
                 TextInput::make('slug')
                     ->label('Slug'),
                 Toggle::make('is_active')
-                    ->label('Activo'),
-
-
-
-
+                    ->label('Activo')
+                    ->visible(
+                        fn() => auth()->user()->hasRol('Administrador') //dar condicion para que solo edite el administrador
+                    ),
             ]);
     }
 
@@ -58,7 +57,9 @@ class CategoriaResource extends Resource
                     ->label('Slug'),
                 ToggleColumn::make('is_active')
                     ->label('Estado')
-                    ->disabled((!auth()->user()->hasPermiso('editar-categoria')))
+                    ->visible(
+                        fn() => auth()->user()->hasRol('Administrador') //dar condicion para que solo edite el administrador
+                    ),
 
             ])
             ->filters([
