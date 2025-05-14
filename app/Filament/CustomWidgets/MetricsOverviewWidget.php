@@ -24,7 +24,7 @@ class MetricsOverviewWidget extends Widget
 
     protected function getColumns(): int
     {
-        $count = count($this->getCachedStats());
+        $count = count($this->getCachedMetrics());
 
         if ($count < 3) {
             return 3;
