@@ -8,7 +8,7 @@
     $descriptionIconPosition = $this->getDescriptionIconPosition();
     // $url = $getUrl();
     $tag = 'div';
-    $dataChecksum = $this->generateDataChecksum();
+    //$dataChecksum = $this->generateDataChecksum();
 
     $descriptionIconClasses = \Illuminate\Support\Arr::toCssClasses([
         'fi-wi-stats-overview-stat-description-icon h-5 w-5',
