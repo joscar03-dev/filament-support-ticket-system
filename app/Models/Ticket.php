@@ -9,7 +9,7 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titulo', 'descripcion', 'estado', 'prioridad', 'comentario', 'asignado_a', 'asignado_por', 'is_resolved'];
+    protected $fillable = ['titulo', 'descripcion', 'estado', 'prioridad', 'comentario', 'asignado_a', 'asignado_por', 'is_resolved', 'attachment'];
 
     const PRIORIDAD =
     [

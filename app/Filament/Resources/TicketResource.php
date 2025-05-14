@@ -9,6 +9,7 @@ use App\Models\Rol;
 use App\Models\Ticket;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -47,6 +48,13 @@ class TicketResource extends Resource
                     ->options(self::$model::ESTADOS)
                     ->required()
                     ->in(array_keys(self::$model::ESTADOS)),
+                FileUpload::make('attachment')
+                    ->label('Archivo')
+                    ->multiple()
+                    ->preserveFilenames()
+                    ->directory('tickets')
+                    ->acceptedFileTypes(['application/pdf', 'image/*'])
+                    ->maxSize(1024),
                 Select::make('prioridad')
                     ->label('Prioridad')
                     ->options(self::$model::PRIORIDAD)
