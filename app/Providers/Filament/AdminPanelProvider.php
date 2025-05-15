@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\CustomWidgets\MetricsOverviewWidget;
 use App\Filament\CustomWidgets\MetricWidget;
+use App\Filament\Resources\TicketResource\Widgets\MetricWidgetSample;
 use App\Filament\Widgets\TicketsOverviewChart;
 use Filament\Facades\Filament;
 use Filament\Http\Middleware\Authenticate;
