@@ -60,9 +60,13 @@ class MetricWidget extends Widget
      */
     protected $value;
 
+    public function updatedFilter($value){
+        $this->getValue();
+    }
+
     protected function getFilters(): ?array
     {
-        return null;
+        return [];
     }
 
 
