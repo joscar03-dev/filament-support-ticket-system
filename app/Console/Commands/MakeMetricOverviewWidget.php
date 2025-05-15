@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Console\Command;
 use Filament\Facades\Filament;
 use Filament\Panel;
 use Filament\Resources\Resource;
 use Filament\Support\Commands\Concerns\CanManipulateFiles;
-use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -14,7 +14,7 @@ use Symfony\Component\Console\Attribute\AsCommand;
 use function Laravel\Prompts\select;
 use function Laravel\Prompts\text;
 
-class MakeMetricWidget extends Command
+class MakeMetricOverviewWidget extends Command
 {
     use CanManipulateFiles;
     /**
@@ -22,14 +22,14 @@ class MakeMetricWidget extends Command
      *
      * @var string
      */
-    protected $signature = 'make:metric-widget {name?} {--R|resource=} {--panel=} {--F|force}';
+    protected $signature = 'make:metric-overview-widget {name?} {--R|resource=} {--panel=} {--F|force}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Crear un widget Metric ';
+    protected $description = 'Crear un overview Widget';
 
     /**
      * Execute the console command.
@@ -179,7 +179,7 @@ class MakeMetricWidget extends Command
             return static::INVALID;
         }
 
-        $this->copyStubToApp('MetricWidget', $path, [
+        $this->copyStubToApp('MetricOverviewWidget', $path, [
             'class' => $widgetClass,
             'namespace' => filled($resource) ? "{$resourceNamespace}\\{$resource}\\Widgets" . ($widgetNamespace !== '' ? "\\{$widgetNamespace}" : '') : $namespace . ($widgetNamespace !== '' ? "\\{$widgetNamespace}" : ''),
             'view' => $view,
