@@ -40,7 +40,7 @@
         ])
     >
         @foreach ($this->getCachedMetrics() as $metric)
-            @livewire($metric)
+            @livewire($metric, key($metric))
         @endforeach
     </div>
 </x-filament-widgets::widget>
