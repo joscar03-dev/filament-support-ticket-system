@@ -1,9 +1,7 @@
 <?php
 
-use App\Livewire\CreateTicket;
-use App\Livewire\EditTicket;
-use App\Livewire\ListTickets;
-use App\Models\User;
+use App\Livewire;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +19,17 @@ Route::get('/', function () {
     //dd(User::find(1)->hasPermiso('crear-categoria'));
     return view('welcome');
 });
+//ruta para login del usuario
+Route::get('/login', Livewire\UserLogin::class)->name('login');
 
-Route::get('/tickets', ListTickets::class)->name('tickets.index');
-//ruta para crear tickets
-Route::get('/tickets/create', CreateTicket::class)->name('tickets.create');
-;
-//rta para editar tickets
-Route::get('/tickets/{ticket}/edit', EditTicket::class)->name('tickets.edit');
+Route::group([
+    'middleware' => 'auth',
+    'prefix' => 'tickets',
+    'as' => 'tickets.',
+], function () {
+    Route::get('/', Livewire\ListTickets::class)->name('index');
+    //ruta para crear tickets
+    Route::get('create', Livewire\CreateTicket::class)->name('create');;
+    //rta para editar tickets
+    Route::get('{ticket}/edit', Livewire\EditTicket::class)->name('edit');
+});
