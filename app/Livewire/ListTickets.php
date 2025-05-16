@@ -106,4 +106,8 @@ class ListTickets extends Component implements HasTable, HasForms
     {
         return view('livewire.list-tickets');
     }
+
+    public function openViewModal(){
+        dd('openViewModal');
+    }
 }

@@ -9,9 +9,33 @@
     </x-slot>
 
     <x-slot name="headerEnd">
-        <x-filament::button href="{{ route('tickets.create')}}" tag="a">
+        <x-filament::button href="{{ route('tickets.create') }}" tag="a">
             Nuevo Ticket
         </x-filament::button>
+
+        {{-- <x-filament::dropdown>
+            <x-slot name="trigger">
+                <x-filament::button>
+                    More actions
+                </x-filament::button>
+            </x-slot>
+
+            <x-filament::dropdown.list>
+                <x-filament::dropdown.list.item wire:click="openViewModal">
+                    View
+                </x-filament::dropdown.list.item>
+
+                <x-filament::dropdown.list.item wire:click="openEditModal">
+                    Edit
+                </x-filament::dropdown.list.item>
+
+                <x-filament::dropdown.list.item wire:click="openDeleteModal">
+                    Delete
+                </x-filament::dropdown.list.item>
+            </x-filament::dropdown.list>
+        </x-filament::dropdown> --}}
+
+
     </x-slot>
 
 
