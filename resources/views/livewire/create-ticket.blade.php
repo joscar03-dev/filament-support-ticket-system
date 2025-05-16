@@ -1,4 +1,4 @@
-<div>
+<x-filament::section icon="heroicon-o-rectangle-stack" icon-color="info" class="max-w-7xl mx-auto items-center justify-center">
     <x-slot name="heading">
         Crear Ticket
     </x-slot>
@@ -11,4 +11,4 @@
     </form>
 
     <x-filament-actions::modals />
-</div>
+</x-filament::section>
