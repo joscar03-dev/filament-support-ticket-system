@@ -73,7 +73,7 @@ class TicketResource extends Resource
                 Textarea::make('comentario')
                     ->label('Comentarios')
                     ->rows(3),
-            ]);
+            ])->statePath('data');
     }
 
     public static function table(Table $table): Table
