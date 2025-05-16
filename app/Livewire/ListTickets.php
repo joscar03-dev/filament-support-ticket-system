@@ -88,7 +88,12 @@ class ListTickets extends Component implements HasTable, HasForms
 
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('edit')
+                    ->label('Editar')
+                    ->icon('heroicon-o-pencil')
+                    ->color('primary')
+                    ->url(fn (Ticket $ticket) => route('tickets.edit', $ticket)),
+
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
