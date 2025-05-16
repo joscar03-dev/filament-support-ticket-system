@@ -35,6 +35,10 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarCollapsibleOnDesktop(true)
 
             ->login()
+            ->registration()
+            ->emailVerification()
+            ->profile()
+            ->passwordReset()
             ->databaseNotifications(true) //actiar notificaciones de base de datos
             ->colors([
                 'danger' => Color::Rose,
